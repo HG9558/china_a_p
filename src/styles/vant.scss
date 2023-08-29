@@ -1,0 +1,158 @@
+:root {
+    --van-primary-color: #334abf;
+}
+.van-tabs {
+    .van-tabs__line {
+        bottom: 20px;
+    }
+}
+
+.van-field {
+    &.van-cell {
+        line-height: inherit;
+    }
+}
+
+.van-field__body {
+    height: 100%;
+}
+
+.van-toast {
+    backdrop-filter: blur(3px);
+    background-color: rgba($color: #fff, $alpha: 1);
+    box-shadow: 0px 3px 6px 0px rgba(172, 177, 200, 0.16);
+    border-radius: 20px;
+    opacity: 1;
+    border: 1px solid;
+    .van-icon {
+        color: var(--van-primary-color);
+    }
+    .van-toast__text {
+        color: #303033;
+    }
+    &.van-toast--text {
+        .van-toast__text {
+            color: #ec3232;
+        }
+    }
+    &.warning,
+    &.van-toast--fail,
+    &.van-toast--success {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        min-height: initial;
+        flex-direction: initial;
+        padding: 7px 18px;
+        border-radius: 6px;
+        box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.12);
+    }
+    &.van-toast--fail {
+        border: 1px solid #f3dede;
+        background: #fdf1f1;
+        .van-icon-fail {
+            font-size: 22px;
+            color: #bf3b34;
+            font-family: "iconfont" !important;
+            flex-shrink: 0;
+            margin-right: 6px;
+            background: linear-gradient(180deg, #c03c35 0%, #ee9895 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            &::before {
+                content: "\e8c6" !important;
+            }
+        }
+        .van-toast__text {
+            color: #bf3b34;
+            margin-top: 0;
+        }
+    }
+    &.warning {
+        border: 1px solid #fee3af;
+        background: #fef6e2;
+        .van-icon-warning {
+            font-size: 20px;
+            color: #ff9600;
+            flex-shrink: 0;
+            margin-right: 6px;
+            background: linear-gradient(180deg, #ffa709 0%, #ffbe09 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .van-toast__text {
+            color: #ff9600;
+            margin-top: 0;
+        }
+    }
+    &.van-toast--success {
+        border: 1px solid #c9e4b5;
+        background: #f8fff5;
+        .van-icon-success {
+            font-size: 22px;
+            color: #37971c;
+            font-family: "iconfont" !important;
+            flex-shrink: 0;
+            margin-right: 6px;
+            background: linear-gradient(180deg, #328f0b 0%, #71bc2c 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            &::before {
+                content: "\e690" !important;
+            }
+        }
+        .van-toast__text {
+            color: #37971c;
+            margin-top: 0;
+        }
+    }
+}
+
+.van-swipe__track {
+    width: 100% !important;
+    .van-swipe-item {
+        width: 100% !important;
+        overflow-x: hidden;
+    }
+}
+
+.van-dialog__header {
+    color: #303033;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.van-popup,
+.van-dropdown-item {
+    position: absolute !important;
+}
+.van-popup--round {
+    border-radius: 22px 22px 0 0 !important;
+}
+
+.setTabs {
+    .van-tabs {
+        height: 100%;
+        .van-tabs__content {
+            height: 100%;
+            overflow: hidden;
+            .van-tab__panel {
+                height: 100%;
+                overflow: hidden;
+            }
+        }
+    }
+}
+.tabs_sports {
+    .van-tabs {
+        .van-tab {
+            padding: 0 !important;
+            .van-tab__text {
+                height: 62px;
+            }
+        }
+    }
+}

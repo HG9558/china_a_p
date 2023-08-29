@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://g.alicdn.com/AWSC/AWSC/awsc.js"></script>
+        <style>
+            body {
+                margin: 0;
+            }
+
+            #captchaBox {
+                width: 100%;
+                user-select: none;
+            }
+
+            #captchaBox #nc {
+                width: 100%;
+                overflow: hidden;
+                border-radius: var(--radius);
+            }
+
+            #captchaBox #nc .nc_wrapper {
+                width: 100% !important;
+                height: var(--lineHeight);
+                font-size: 14px;
+                line-height: var(--lineHeight);
+            }
+
+            #captchaBox #nc .nc_wrapper .nc_scale {
+                height: var(--lineHeight);
+            }
+
+            #captchaBox #nc .nc_wrapper .nc_scale .nc_bg {
+                background: #495fce80;
+                line-height: var(--lineHeight);
+            }
+
+            #captchaBox #nc .nc_wrapper .nc_scale .nc_iconfont {
+                border-radius: var(--radius);
+                width: var(--lineHeight);
+            }
+
+            #captchaBox #nc .nc_wrapper .nc_scale .btn_ok {
+                height: var(--lineHeight);
+                line-height: var(--lineHeight);
+                box-sizing: border-box;
+            }
+
+            #captchaBox #nc .nc_wrapper .nc_scale .btn_slide {
+                height: var(--lineHeight);
+                line-height: var(--lineHeight);
+                box-sizing: border-box;
+            }
+
+            #captchaBox #nc .nc_wrapper .nc_scale .scale_text {
+                line-height: var(--lineHeight);
+            }
+
+            #captchaBox #nc .nc_wrapper .nc_scale .scale_text.scale_text2 {
+                text-indent: -10px;
+            }
+
+            #captchaBox #nc .nc_wrapper .nc_scale .scale_text .nc-lang-cnt {
+                line-height: var(--lineHeight);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="captchaBox">
+            <div id="nc" class="w-full" />
+        </div>
+        <script>
+            const scene = "nc_register_h5";
+            const appkey = "FFFF0N0000000000B3BA";
+            const params = new URLSearchParams(location.search);
+            const [height, radius] = [params.get("height"), params.get("radius")];
+            const captchaBox = document.getElementById("captchaBox");
+            const nc = document.getElementById("nc");
+            captchaBox.style.setProperty("--lineHeight", `${height || 40}px`);
+            nc.style.setProperty("--lineHeight", `${height || 40}px`);
+            captchaBox.style.setProperty("--radius", `${radius || 6}px`);
+            nc.style.setProperty("--radius", `${radius || 6}px`);
+
+            const timeOut = time => new Promise(resolve => setTimeout(resolve, time));
+
+            const upLang = {
+                cn: {
+                    LOADING: "加载中...",
+                    SLIDE: "请向右滑动验证",
+                    SUCCESS: "验证通过",
+                    ERROR: "非常抱歉，网络出错了...",
+                    FAIL: "验证失败，请重试",
+                },
+            };
+
+            const success = data => {
+                var _window,
+                    _window$webkit,
+                    _window$webkit$messag,
+                    _window$webkit$messag2,
+                    _window2,
+                    _window2$testInterfac;
+                const result = {
+                    nc_token: data === null || data === void 0 ? void 0 : data.token,
+                    sessionid: data === null || data === void 0 ? void 0 : data.sessionId,
+                    sig: data === null || data === void 0 ? void 0 : data.sig,
+                };
+                (_window = window) === null || _window === void 0
+                    ? void 0
+                    : (_window$webkit = _window.webkit) === null || _window$webkit === void 0
+                    ? void 0
+                    : (_window$webkit$messag = _window$webkit.messageHandlers) === null ||
+                      _window$webkit$messag === void 0
+                    ? void 0
+                    : (_window$webkit$messag2 = _window$webkit$messag.getSlideData) === null ||
+                      _window$webkit$messag2 === void 0
+                    ? void 0
+                    : _window$webkit$messag2.postMessage(result);
+                (_window2 = window) === null || _window2 === void 0
+                    ? void 0
+                    : (_window2$testInterfac = _window2.testInterface) === null ||
+                      _window2$testInterfac === void 0
+                    ? void 0
+                    : _window2$testInterfac.getSlideData(JSON.stringify(result));
+            };
+            const reset = () => {
+                var _nc$value, _nc$value$reset;
+                (_nc$value = nc.value) === null || _nc$value === void 0
+                    ? void 0
+                    : (_nc$value$reset = _nc$value.reset) === null || _nc$value$reset === void 0
+                    ? void 0
+                    : _nc$value$reset.call(_nc$value);
+            };
+            const fail = async () => {
+                await timeOut(1500);
+                reset === null || reset === void 0 ? void 0 : reset();
+            };
+            const error = async () => {
+                await timeOut(1500);
+                reset === null || reset === void 0 ? void 0 : reset();
+            };
+
+            // https://help.aliyun.com/document_detail/193141.html
+            const initCaptcha = () => {
+                var _window$AWSC;
+                if (nc.value) return;
+                (_window$AWSC = window.AWSC) === null || _window$AWSC === void 0
+                    ? void 0
+                    : _window$AWSC.use("nc", (state, module) => {
+                          nc.value = module.init({
+                              renderTo: "nc",
+                              scene,
+                              appkey,
+                              upLang,
+                              success,
+                              error,
+                              fail,
+                          });
+                      });
+            };
+            initCaptcha();
+        </script>
+    </body>
+</html>

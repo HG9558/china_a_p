@@ -1,0 +1,106 @@
+// 不要修改svg文件内的宽高
+@tailwind utilities;
+
+@layer utilities {
+    .tlw_active_0 {
+        border-image-slice: 50 70 30 30 fill;
+        border-image-width: 50px 70px 30px 30px;
+        border-image-outset: 0px 0px 0px 0px;
+        border-image-repeat: stretch stretch;
+        border-image-source: url("@/assets/svg/ic_active_0.svg");
+        border-style: solid;
+    }
+    .tlw_active_1 {
+        border-image-slice: 50 70 30 30 fill;
+        border-image-width: 50px 70px 30px 30px;
+        border-image-outset: 0px 0px 0px 0px;
+        border-image-repeat: stretch stretch;
+        border-image-source: url("@/assets/svg/ic_active_1.svg");
+        border-style: solid;
+    }
+
+    .tlw_vip_bg {
+        border-image-slice: 55 115 27 27 fill;
+        border-image-width: 55px 115px 27px 27px;
+        border-image-outset: 0px 0px 0px 0px;
+        border-image-repeat: stretch stretch;
+        border-image-source: url("@/assets/svg/ic_vip_bg.svg");
+        border-style: solid;
+    }
+    .tlw_vip_detail_bg {
+        border-image-slice: 65 20 15 150 fill;
+        border-image-width: 65px 20px 15px 150px;
+        border-image-outset: 0px 0px 0px 0px;
+        border-image-repeat: stretch stretch;
+        border-image-source: url("@/assets/svg/ic_vip_detail.svg");
+        border-style: solid;
+    }
+    .tlw_btn_white {
+        border-image-slice: 0 27 0 27 fill;
+        border-image-width: 0px 27px 0px 27px;
+        border-image-outset: 0px 0px 0px 0px;
+        border-image-repeat: stretch stretch;
+        border-image-source: url("@/assets/svg/ic_btn_loginOut.svg");
+        border-style: solid;
+    }
+    .tlw_login {
+        border: inset;
+        border-image-slice: 70 40 50 40 fill !important;
+        border-image-width: 70px 40px 50px 40px !important;
+        border-image-outset: 0px 0px 0px 0px;
+        border-image-repeat: stretch stretch;
+        border-image-source: url("@/assets/svg/ic_login_bg.svg") !important;
+        border-style: solid !important;
+    }
+    .tlw_betslip_bg {
+        border-image-slice: 40 10 10 80 fill;
+        border-image-width: 40px 10px 10px 80px;
+        border-image-outset: 0px 0px 0px 0px;
+        border-image-repeat: stretch stretch;
+        border-image-source: url("@/assets/svg/ic_betslip_bg.svg");
+        border-style: solid;
+    }
+    .tlw_game_bg {
+        border-image-slice: 45 27 27 90 fill;
+        border-image-width: 45px 27px 27px 90px;
+        border-image-outset: 0px 0px 0px 0px;
+        border-image-repeat: stretch stretch;
+        border-image-source: url("@/assets/svg/ic_game.svg");
+        border-style: solid;
+    }
+    .tlw_tutorial_bg {
+        border-image-slice: 0 20 0 20 fill;
+        border-image-width: 0px 20px 0px 20px;
+        border-image-outset: 0px 0px 0px 0px;
+        border-image-repeat: stretch stretch;
+        border-image-source: url("@/assets/svg/ic_tutorial_title_bg.svg");
+        border-style: solid;
+    }
+    .tlw_invite_bg {
+        border-image-slice: 0 35 0 35 fill;
+        border-image-width: 0px 35px 0px 35px;
+        border-image-outset: 0px 0px 0px 0px;
+        border-image-repeat: stretch stretch;
+        border-image-source: url("@/assets/svg/ic_Invite_bg.svg");
+        border-style: solid;
+    }
+    .tlw_vip_title_bg {
+        border-image-slice: 0 60 0 60 fill;
+        border-image-width: 0px 60px 0px 60px;
+        border-image-outset: 0px 0px 0px 0px;
+        border-image-repeat: stretch stretch;
+        border-image-source: url("@/assets/svg/ic_vip_title_bg.svg");
+        border-style: solid;
+    }
+    .tlw_detail_bg_footer {
+        border-image-slice: 0 200 0 20 fill;
+        border-image-width: 0px 200px 0px 20px;
+        border-image-outset: 0px 0px 0px 0px;
+        border-image-repeat: stretch stretch;
+        border-image-source: url("@/assets/details/ic_bg_footer.svg");
+        border-style: solid;
+        &.sm_slice {
+            border-image-slice: 0 120 0 20 fill;
+        }
+    }
+}

@@ -1,0 +1,97 @@
+a[title="站长统计"] {
+    display: none;
+}
+html,
+body,
+#app {
+    height: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    font-family: "PingFang SC", "Microsoft Yahei", sans-serif, Arial, Roboto, iconfont !important;
+    font-display: swap;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    position: relative;
+    padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 20px)
+        env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 20px);
+}
+div,
+span,
+p,
+header,
+main,
+footer,
+ul,
+li {
+    box-sizing: border-box;
+}
+i {
+    font-style: normal;
+}
+svg {
+    display: initial;
+}
+p {
+    margin: 0;
+}
+
+img {
+    font-size: 0;
+    border: none !important;
+    transition: opacity 0.3s linear;
+    object-fit: cover;
+}
+
+input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.shadowBox {
+    box-shadow: 2px 3px 10px #b8b9be, -2px -3px 10px #fff;
+    &:active {
+        box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;
+    }
+}
+
+.competition {
+    [class*="swiper-pagination-"] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        > .swiper-pagination-bullet {
+            width: 14px;
+            height: 3px;
+            border-radius: 2px;
+        }
+    }
+}
+
+.cursor {
+    &::after,
+    &::before {
+        animation: cursorImg 1.5s infinite steps(1, start);
+        @keyframes cursorImg {
+            0%,
+            100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    }
+}

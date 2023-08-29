@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .tlw_top_bg {
+        @apply bg-[url('@/assets/home/home_bg.png')] bg-[length:100%] bg-no-repeat;
+    }
+    .tlw_vip_top_bg {
+        @apply bg-[url('@/assets/vip/ic_vip_top_bg.png')] bg-[length:100%] bg-no-repeat;
+    }
+    .tlw_activity_t_bg {
+        @apply bg-[url('@/assets/activity/ic_activity_t_bg.png')] bg-top bg-fixed bg-no-repeat;
+    }
+
+    .tlw_text_linear {
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .tlw_skeleton {
+        background: linear-gradient(
+            -45deg,
+            #f9f9f9 30%,
+            #eaeaea 40%,
+            #f9f9f9 60%,
+            #eaeaea 70%,
+            #f9f9f9 80%
+        );
+        background-size: 300% 100%;
+        animation: skeleton-animation 3s linear infinite;
+        @keyframes skeleton-animation {
+            0% {
+                background-position: 300% 0;
+            }
+            to {
+                background-position: 0 300%;
+            }
+        }
+    }
+    .tlw_zy {
+        animation: zy 2.5s 0.15s linear infinite;
+        @keyframes zy {
+            10% {
+                transform: rotate(15deg);
+            }
+            20% {
+                transform: rotate(-10deg);
+            }
+            30% {
+                transform: rotate(5deg);
+            }
+            40% {
+                transform: rotate(-5deg);
+            }
+            50%,
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+    }
+
+    .tlw_left {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        right: 0;
+        bottom: 35%;
+        z-index: 10;
+        background: url("@/assets/svg/ic_arrow.svg") no-repeat 50% / contain;
+        animation: dir_left_animate 1.4s cubic-bezier(0.49, 0.49, 0.61, 0.59) infinite;
+        @keyframes dir_left_animate {
+            0% {
+                transform: translateX(0);
+                opacity: 0;
+            }
+
+            60% {
+                transform: translateX(-4px);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateX(-6px);
+                opacity: 0;
+            }
+        }
+    }
+    .tlw_right {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        right: 0;
+        bottom: 35%;
+        z-index: 10;
+        background: url("@/assets/svg/ic_arrow.svg") no-repeat 50% / cover;
+        animation: dir_right_animate 1.4s cubic-bezier(0.49, 0.49, 0.61, 0.59) infinite;
+        @keyframes dir_right_animate {
+            0% {
+                transform: translateX(-6px) rotate(180deg);
+                opacity: 0;
+            }
+
+            60% {
+                transform: translateX(-4px) rotate(180deg);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateX(0) rotate(180deg);
+                opacity: 0;
+            }
+        }
+    }
+    .tlw_up_animation {
+        animation: up_down_animation 1.5s ease-in-out infinite;
+    }
+
+    .tlw_down_animation {
+        animation: up_down_animation 1s ease-in-out infinite;
+    }
+
+    @keyframes up_down_animation {
+        0% {
+            opacity: 1;
+            transform: translateY(2px);
+        }
+
+        25% {
+            opacity: 0.25;
+            transform: translateY(0);
+        }
+
+        50% {
+            opacity: 0.5;
+            transform: translateY(2px);
+        }
+
+        75% {
+            opacity: 0.75;
+            transform: translateY(0);
+        }
+
+        to {
+            transform: translateY(2px);
+            opacity: 1;
+        }
+    }
+    .tlw_btn_linear {
+        background: linear-gradient(90deg, #5881fc, #4c67de);
+    }
+
+    .tlw_arrow_down {
+        animation: goToTop_Move 1s infinite;
+    }
+
+    @keyframes goToTop_Move {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+}
